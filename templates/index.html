@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOBVERSE</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Header -->
+        <header class="chat-header">
+            <h1>JOBVERSE</h1>
+            <p>AI Assistant for Your Dream Job</p>
+        </header>
+
+        <!-- Chat Window -->
+        <div id="chatWindow" class="chat-window"></div>
+
+        <!-- Input Form -->
+        <form id="queryForm" class="chat-input">
+            <input type="text" id="queryInput" placeholder="Type your message..." required />
+            <button type="submit">
+                <img src="{{ url_for('static', filename='send-icon.png') }}" alt="Send" class="send-icon" />
+            </button>
+        </form>
+    </div>
+</body>
+</html>

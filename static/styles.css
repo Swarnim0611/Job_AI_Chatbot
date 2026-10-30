@@ -1,0 +1,158 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #131720; /* ChatGPT Dark Blue */
+    color: #ffffff; /* White text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Chat Container */
+.chat-container {
+    width: 100%;
+    max-width: 1000px; /* Increased width from 800px to 1000px */
+    height: 90vh;
+    background: #202C39; /* ChatGPT Background */
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Header */
+.chat-header {
+    background: #2B3A52; /* ChatGPT Header */
+    color: #f7fafc; /* Light text */
+    padding: 15px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Chat Window */
+.chat-window {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background: #131720; /* ChatGPT Main Area */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Chat Messages */
+.chat-message {
+    padding: 10px 15px;
+    padding-left: 40px; /* Increased padding to accommodate the icon */
+    border-radius: 10px;
+    max-width: 75%;
+    word-wrap: break-word;
+    font-size: 0.95rem;
+    position: relative; /* Needed for icon positioning */
+    display: flex;
+    align-items: flex-start; /* Align content to the top */
+}
+
+.user-message {
+    align-self: flex-end;
+    background: #4F8CC9; /* User Message Color */
+    color: white;
+    background-image: url('/static/user.png'); /* User Icon */
+    background-repeat: no-repeat;
+    background-position: left 10px center; /* Adjust icon position */
+    background-size: 20px 20px; /* Adjust icon size */
+}
+
+.bot-message {
+    align-self: flex-start;
+    background: #2B3A52; /* Bot Message Color */
+    color: white;
+    background-image: url('/static/bot.png'); /* Bot Icon */
+    background-repeat: no-repeat;
+    background-position: left 10px center; /* Adjust icon position */
+    background-size: 20px 20px; /* Adjust icon size */
+}
+
+.typing {
+    display: inline-block;
+    font-size: 0.9rem;
+    color: #a0aec0;
+}
+
+.typing span {
+    animation: blink 1.5s infinite;
+}
+
+.typing span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Input Bar */
+.chat-input {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: #2B3A52; /* Input Area */
+    border-top: 1px solid #4a5568;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1rem;
+    color: #333;
+    background: #f7fafc; /* Light gray for input field */
+}
+
+.chat-input button {
+    background-color: #4F8CC9; /* Button Color */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+}
+
+.chat-input button:hover {
+    background-color: #2B3A52; /* Hover Color */
+    transform: scale(1.05);
+}
+
+.chat-input button:disabled {
+    background-color: #a0aec0; /* Disabled State */
+    cursor: not-allowed;
+    transform: none;
+}
+
+.chat-input .send-icon {
+    width: 20px;
+    height: 20px;
+    filter: invert(1); /* Invert the color for white appearance */
+}
